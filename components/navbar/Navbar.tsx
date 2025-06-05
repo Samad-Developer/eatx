@@ -1,8 +1,8 @@
 'use client'
-
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
+import OptimizedImage from '../ui/OptimizedImage'
 
 const navigation = [
   { name: 'Solutions', href: '#solutions' },
@@ -37,7 +37,7 @@ const navVariants = {
   }
 }
 
-export default function Header() {
+export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isDesktop, setIsDesktop] = useState(false)
 
@@ -56,7 +56,7 @@ export default function Header() {
   }, [])
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-center py-1 px-3 sm:px-0">
+    <header className="fixed inset-x-0  top-[-2rem] md:top-0 z-50 flex items-center justify-center py-1 px-3 sm:px-0">
       <motion.nav
         initial={false}
         animate={mobileMenuOpen ? 'open' : 'closed'}
@@ -69,7 +69,14 @@ export default function Header() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            EatX
+            <OptimizedImage
+                folder="eatx"
+                src='eatx.png'
+                alt={`eatx logo`}
+                width={70}
+                height={30}
+                // className="w-full h-full object-cover"
+              />
           </motion.div>
 
           {/* Mobile menu toggle button - hidden on desktop */}
@@ -108,7 +115,6 @@ export default function Header() {
                 </motion.div>
               ))}
             </div>
-           
           </div>
 
 
@@ -119,9 +125,9 @@ export default function Header() {
               >
                 <Link
                   href="#contact"
-                  className="bg-orange-600 text-white px-5 py-2.5 rounded-full text-center"
+                  className="bg-red-600 text-white px-5 py-2.5 rounded-full text-center"
                 >
-                  Get Demo
+                  Contact
                 </Link>
               </motion.div>
             </div>
@@ -135,7 +141,7 @@ export default function Header() {
               animate="open"
               exit="closed"
               variants={navVariants}
-              className="flex flex-col space-y-4 mt-6 lg:hidden"
+              className="flex flex-col items-center space-y-4 mt-6 lg:hidden"
             >
               {navigation.map((item) => (
                 <motion.div
@@ -165,7 +171,7 @@ export default function Header() {
                   className="bg-orange-600 text-white px-5 py-2.5 rounded-full text-center block w-full"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Get Demo
+                  Contact
                 </Link>
               </motion.div>
             </motion.div>
