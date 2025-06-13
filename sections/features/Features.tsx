@@ -90,10 +90,10 @@ export function KeyFeatures() {
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 "
+            className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 bg-red-100 rounded-full"
           >
             <Zap className="w-5 h-5 text-red-600" />
-            <span className="font-medium text-red-600">Streamline Your Operations</span>
+            <span className="font-medium text-red-600 ">Streamline Your Operations</span>
           </motion.div>
           
           <motion.h2 
@@ -102,7 +102,7 @@ export function KeyFeatures() {
             transition={{ delay: 0.3 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
           >
-            Our Services 
+            Our <span className="text-red-600">Services</span> 
             {/* <span className="relative inline-block">Reimagined
               <svg className="absolute -bottom-3 left-0 w-full" viewBox="0 0 300 20">
                 <path 
@@ -139,7 +139,7 @@ export function KeyFeatures() {
           transition={{ delay: 0.5 }}
           className="flex justify-center mb-12"
         >
-          <div className="inline-flex p-1 rounded-full bg-white  border-gray-200 shadow-sm">
+          <div className="inline-flex p-1 rounded-full bg-gray-50 border border-red-200 shadow-sm">
             
             <button 
               onClick={() => setActiveTab("pos")}
@@ -175,7 +175,8 @@ export function KeyFeatures() {
              
               <div className="relative rounded-2xl blur-md opacity-0"></div>
               {/* line for bottom right border for style only */}
-                <div className="absolute w-1.5 h-14 bg-red-600 right-0 bottom-5 rounded-l-full"></div>
+                <div className="absolute w-1.5 h-10 rounded-r-full bg-red-600 right-[-6px] bottom-3 "></div>
+
               <div className="relative p-6 rounded-2xl shadow-lg  h-full border border-gray-100">
 
                 

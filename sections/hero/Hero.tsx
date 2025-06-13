@@ -109,7 +109,7 @@ export default function Hero() {
                   }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Schedule a Demo
+                  Get Free Demo
                 </motion.a>
               </motion.div>
             </motion.div>
