@@ -3,6 +3,7 @@ import { siteDetails } from "@/data/siteDetails";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Inter, Poppins } from 'next/font/google';
+import { Analytics } from "@vercel/analytics/next"
 
 // Define your fonts
 const inter = Inter({ subsets: ['latin'] });
@@ -40,6 +41,7 @@ export default function RootLayout({
         className={`${inter.className} ${poppins.variable}`}
       >
         {children}
+        <Analytics/>
       </body>
     </html>
   );

@@ -15,11 +15,11 @@ interface TeamMember {
 
 const team: TeamMember[] = [
   { id: 1, name: "Zia Uddin", role: "CEO & Co-Founder", photo: "samad.png", isLeadership: true, expertise: "Strategy, Innovation, Leadership" },
-  { id: 2, name: "Nasir Mehmood", role: "Sales & Marketing", photo: "nasir.jpg", isLeadership: true, expertise: "Strategy, Innovation, Leadership"},
+  { id: 2, name: "Nasir Mehmood", role: "Sales & Marketing", photo: "nasirbhai.png", isLeadership: true, expertise: "Strategy, Innovation, Leadership"},
   { id: 3, name: "Samad", role: "Frontend Developer", photo: "samad.png" },
   { id: 4, name: "Mohsin Zaidi", role: "Flutter Developer", photo: "samad.png" },
   { id: 5, name: "Ammar Khan", role: "Senior Backend Developer", photo: "samad.png" },
-  { id: 6, name: "Yousaf Kafeel", role: "Support Manager", photo: "yousaf.jpg" },
+  { id: 6, name: "Yousaf Kafeel", role: "Support Manager", photo: "yousafbhai.png" },
 ];
 
 export const OurTeam = () => {
@@ -175,14 +175,14 @@ export const OurTeam = () => {
               className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
             >
               <div className="relative">
-                <div className="h-52">
+                <div className="h-36">
                   <OptimizedImage
                     folder='team-members'
                     src={member.photo}
                     alt={member.name}
-                    width={250}
-                    height={250}
-                    className="w-full h-full object-contain"
+                    width={150}
+                    height={150}
+                    className="w-full h-full rounded-full object-contain"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -219,9 +219,13 @@ export const OurTeam = () => {
                 </div>
               </div>
               
-              <div className="absolute top-3 right-3 bg-red-50 rounded-full px-2 py-1 text-xs font-medium">
-                <span className="text-red-600">Expert</span>
-              </div>
+              {(member.name === "Ammar Khan" || member.name === "Mohsin Zaidi") && (
+  <div className="absolute top-3 right-3 bg-gradient-to-r from-pink-100 to-red-200 shadow-md rounded-full px-3 py-1 text-[11px] font-semibold text-red-700 flex items-center gap-1 animate-pulse">
+    <span className="inline-block w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+    <span>Expert</span>
+  </div>
+)}
+
             </motion.div>
           ))}
         </div>
