@@ -20,7 +20,13 @@ import {
 import { Button } from "@/components/ui/button"
 
 // Custom Badge Component
-const CustomBadge = ({ children, variant = "default", className = "" }) => {
+type CustomBadgeProps = {
+  children: React.ReactNode
+  variant?: "default" | "outline"
+  className?: string
+}
+
+const CustomBadge = ({ children, variant = "default", className = "" }: CustomBadgeProps) => {
   const baseClasses = "inline-flex items-center px-3 py-1 rounded-full text-sm font-medium"
   const variantClasses = {
     default: "bg-gray-100 text-gray-800",
