@@ -14,12 +14,12 @@ interface TeamMember {
 }
 
 const team: TeamMember[] = [
-  { id: 1, name: "Zia Uddin", role: "CEO & Co-Founder", photo: "samad.png", isLeadership: true, expertise: "Strategy, Innovation, Leadership" },
+  { id: 1, name: "Zia Uddin", role: "CEO & Co-Founder", photo: "", isLeadership: true, expertise: "Strategy, Innovation, Leadership" },
   { id: 2, name: "Nasir Mehmood", role: "Sales & Marketing", photo: "nasirbhai.png", isLeadership: true, expertise: "Strategy, Innovation, Leadership" },
-  { id: 3, name: "Samad", role: "Frontend Developer", photo: "samad.png" },
-  { id: 4, name: "Mohsin Zaidi", role: "Flutter Developer", photo: "samad.png" },
-  { id: 5, name: "Ammar Khan", role: "Senior Backend Developer", photo: "samad.png" },
+  { id: 4, name: "Mohsin Zaidi", role: "Flutter Developer", photo: "" },
+  { id: 5, name: "Ammar Khan", role: "Senior Backend Developer", photo: "ammar.png" },
   { id: 6, name: "Yousaf Kafeel", role: "Support Manager", photo: "yousafbhai.png" },
+  { id: 3, name: "Samad", role: "Frontend Developer", photo: "samad.png" },
 ];
 
 export const OurTeam = () => {
@@ -35,7 +35,7 @@ export const OurTeam = () => {
   return (
     <section className="relative py-16 px-4 sm:px-6 overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-20 left-0 right-0 h-56 bg-gradient-to-r from-red-500/10 to-red-600/10 transform -skew-y-3"></div>
+      {/* <div className="absolute top-20 left-0 right-0 h-56 bg-gradient-to-r from-red-500/10 to-red-600/10 transform -skew-y-3"></div> */}
 
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
@@ -51,8 +51,8 @@ export const OurTeam = () => {
             transition={{ delay: 0.2, type: "spring" }}
             className="inline-block mb-6"
           >
-            <div className="bg-gradient-to-r from-red-500 to-red-700 text-white px-6 py-2 rounded-full text-sm font-medium inline-flex items-center">
-              <span className="h-2 w-2 bg-white rounded-full mr-2 animate-pulse"></span>
+            <div className="px-4 py-1.5 bg-red-100 rounded-full text-red-600 text-sm font-medium inline-flex items-center">
+              <span className="h-2 w-2 bg-red-600 rounded-full mr-2 animate-pulse"></span>
               Meet Our Team
             </div>
           </motion.div>
@@ -63,16 +63,12 @@ export const OurTeam = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-800">Leadership</span> &
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-800"> Team</span>
+            Our 
+            {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-600">Leadership</span> & */}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-600"> Team</span>
           </motion.h2>
 
-          <motion.div
-            className="w-24 h-1 bg-gradient-to-r from-red-600 to-red-800 mx-auto mb-6 rounded-full"
-            initial={{ width: 0 }}
-            whileInView={{ width: "6rem" }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-          ></motion.div>
+      
 
           <motion.p
             className="text-gray-600 max-w-2xl mx-auto text-lg"
@@ -96,7 +92,7 @@ export const OurTeam = () => {
               whileHover={{ y: -10 }}
               className={`
         group relative w-full max-w-xs bg-white/80 backdrop-blur-sm rounded-3xl 
-        border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden ring-2 ring-red-500/40
+        border border-white/20 transition-all duration-300 overflow-hidden ring-2 ring-red-500/40
        
       `}
             >
@@ -107,7 +103,7 @@ export const OurTeam = () => {
 
               {/* Crown icon */}
 
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10 bg-red-600 p-2 rounded-full shadow-lg">
+              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10 bg-red-600 p-2 rounded-full ">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1.3l3.95.78a1 1 0 01.64 1.57l-2.49 3.15 1.1 4.29a1 1 0 01-1.53 1.06L10 13.38l-3.67 2.4a1 1 0 01-1.53-1.06l1.1-4.29-2.49-3.15a1 1 0 01.64-1.57L9 4.32V3a1 1 0 011-1z" clipRule="evenodd" />
                 </svg>
@@ -116,7 +112,7 @@ export const OurTeam = () => {
 
               {/* Profile Image */}
               <div className="flex justify-center pt-10">
-                <div className="relative w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                <div className="relative w-28 h-28 rounded-full overflow-hidden shadow-lg">
                   <OptimizedImage
                     folder='team-members'
                     src={member.photo}
@@ -172,20 +168,23 @@ export const OurTeam = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 + 0.3, duration: 0.5 }}
               whileHover={{ y: -5 }}
-              className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              className="group relative bg-white rounded-2xl overflow-hidden transition-all duration-300 border"
             >
               <div className="relative">
-                <div className="h-36">
-                  <OptimizedImage
-                    folder='team-members'
-                    src={member.photo}
-                    alt={member.name}
-                    width={150}
-                    height={150}
-                    className="w-full h-full rounded-full object-contain"
-                  />
+                <div className="flex justify-center mt-6">
+                  <div className="relative w-24 h-24 rounded-full overflow-hidden shadow-lg">
+                    <OptimizedImage
+                      folder='team-members'
+                      src={member.photo}
+                      alt={member.name}
+                      width={96}
+                      height={96}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> */}
               </div>
 
               <div className="p-4 text-center">
@@ -194,7 +193,7 @@ export const OurTeam = () => {
                 </h3>
                 <p className="text-gray-500 text-sm mt-1">{member.role}</p>
 
-                <div className="mt-3 flex justify-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="mt-3 flex justify-center space-x-2">
                   <motion.a
                     href="#"
                     className="bg-gray-100 p-1.5 rounded-full hover:bg-red-100 transition-colors"

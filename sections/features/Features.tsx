@@ -56,7 +56,7 @@ const iconVariants = {
 };
 
 export function KeyFeatures() {
-  const [activeTab, setActiveTab] = useState("all");
+  const [activeTab, setActiveTab] = useState("pos");
   
   const posFeatures = [
     { icon: <Tablet className="w-6 h-6" />, title: "Tableside Ordering", description: "Mobile POS for instant order processing", color: "from-red-300 to-red-600" },
@@ -75,7 +75,7 @@ export function KeyFeatures() {
   const allFeatures = [...posFeatures, ...onlineFeatures];
   
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden ">
+    <section className="py-24 px-2 sm:px-6 lg:px-8 relative overflow-hidden ">
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
@@ -139,7 +139,7 @@ export function KeyFeatures() {
           transition={{ delay: 0.5 }}
           className="flex justify-center mb-12"
         >
-          <div className="inline-flex p-1 rounded-full bg-gray-50 border border-red-200 shadow-sm">
+          <div className="inline-flex p-1 rounded-full bg-slate-100 border">
             
             <button 
               onClick={() => setActiveTab("pos")}
@@ -162,7 +162,7 @@ export function KeyFeatures() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "0px 0px -150px 0px" }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-2 md:gap-6"
         >
           {(activeTab === "all" ? allFeatures : 
             activeTab === "pos" ? posFeatures : onlineFeatures).map((feature, index) => (
@@ -175,15 +175,15 @@ export function KeyFeatures() {
              
               <div className="relative rounded-2xl blur-md opacity-0"></div>
               {/* line for bottom right border for style only */}
-                <div className="absolute w-1.5 h-10 rounded-r-full bg-red-600 right-[-6px] bottom-3 "></div>
+<div className="hidden sm:block absolute w-2 h-10 rounded-l-full bg-gradient-to-br from-red-300 to-red-400 right-0 bottom-4"></div>
 
-              <div className="relative p-6 rounded-2xl shadow-lg  h-full border border-gray-100">
+              <div className="relative p-6 rounded-2xl  h-full border border-gray-200">
 
                 
                 <div className="flex flex-col h-full">
-                  <div className="mb-6 pt-5">
+                  <div className="mb-6 ">
                     <div
-                      className={`absolute top-[-1.5rem] inline-flex p-3 rounded-full bg-gradient-to-br ${feature.color} text-white mb-4`}
+                      className={` inline-flex p-3 rounded-full bg-gradient-to-br ${feature.color} text-white mb-4`}
                     >
                       {feature.icon}
                     </div>
@@ -213,27 +213,7 @@ export function KeyFeatures() {
        
       </div>
       
-      <style jsx global>{`
-        @keyframes float {
-          0% {
-            transform: translateY(0px) rotate(0deg);
-          }
-          50% {
-            transform: translateY(-20px) rotate(5deg);
-          }
-          100% {
-            transform: translateY(0px) rotate(0deg);
-          }
-        }
-        
-        .animate-float {
-          animation: float 8s ease-in-out infinite;
-        }
-        
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-      `}</style>
+     
     </section>
   );
 }

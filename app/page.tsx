@@ -7,30 +7,55 @@ import { ContactUs } from '@/sections/contact-us/Contact'
 import Faq from '@/sections/faq/Faq'
 import OtherProducts from '@/sections/other-products/OtherProducts'
 import MarketingSection from '@/sections/marketing/MarketingSection'
-import Stats from '@/sections/stats/Stats'
 import Content from '@/sections/content/Content'
 import Support from '@/sections/support/Support'
 import CustomerReviews from '@/sections/customer-reviews/CustomerReviews'
 import ProblemSolution from '@/sections/problem-solution/ProblemSolution'
+import Footer from '@/components/footer/Footer'
 
 const Home = () => {
   return (
-    <div className='w-full'>
+    <div className="w-full">
+      {/* 1. Hook + First Impression */}
       <Hero />
-      <KeyFeatures />
+
+      {/* 2. Build Credibility Early */}
       <Clients />
+
+      {/* 3. Show Key Benefits Immediately */}
+      <KeyFeatures />
+
+      {/* 4. Address Their Problem, Then Your Solution */}
       <ProblemSolution />
-      {/* <Stats /> */}
+
+      {/* 5. Explain How You Market/Deliver (Trust & Reach) */}
       <MarketingSection />
-      <Content />
-      <OurTeam />
-      <OtherProducts />
-      <Faq />
+
+      {/* 6. Show Active Support + Workflow Confidence */}
       <Support />
+
+      {/* 7. Highlight the Human Behind the Product */}
+      <OurTeam />
+
+      {/* 8. Provide Value-Driven Educational or Interactive Content */}
+      {/* <Content /> */}
+
+      {/* 9. Cross-sell Other Relevant Products/Modules */}
+      <OtherProducts />
+
+      {/* 10. Overcome Objections with FAQs */}
+      <Faq />
+
+      {/* 11. Social Proof (Testimonials After Objections) */}
       <CustomerReviews />
+
+      {/* 12. Clear Final CTA */}
       <ContactUs />
 
+      {/* Footer */}
+      <Footer/>
     </div>
+
   )
 }
 

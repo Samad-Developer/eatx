@@ -69,13 +69,13 @@ export default function Hero() {
               animate="show"
             >
               <motion.h1
-                className="text-5xl font-bold tracking-tight text-balance text-gray-900 sm:text-6xl lg:text-7xl"
+                className="text-5xl font-extrabold sm:font-bold tracking-tight text-balance text-gray-900 sm:text-6xl lg:text-7xl"
                 variants={item}
               >
                 <span className="block">
                   All-in-One Restaurant Management Platform{" "}
                   <motion.span
-                    className="bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent"
+                    className="bg-gradient-to-r from-red-400 to-red-700 bg-clip-text text-transparent"
                     variants={gradientPulse}
                     initial="initial"
                     animate="animate"
@@ -101,17 +101,46 @@ export default function Hero() {
               >
                 <motion.a
                   href="#pricing"
-                  className="relative rounded-full bg-red-600 px-6 py-3 text-base sm:text-lg font-semibold text-white hover:shadow-xl transition-all hover:bg-orange-700 "
+                  className="relative inline-flex items-center justify-center rounded-full bg-red-500 px-6 py-3 text-base sm:text-lg font-semibold text-white "
                   whileHover={{
-                    y: -2,
-                    scale: 1.02,
-                    boxShadow: "0 10px 25px -5px rgba(234, 88, 12, 0.4)",
+                    scale: 1.05,
+                    y: -3,
+                    boxShadow: "0 8px 24px rgba(239, 68, 68, 0.4)",
                   }}
-                  whileTap={{ scale: 0.98 }}
+                  whileTap={{
+                    scale: 0.97,
+                    boxShadow: "0 4px 12px rgba(239, 68, 68, 0.2)",
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 15,
+                  }}
                 >
-                  Get Free Demo
+                  <span className="relative z-10">Get Free Demo</span>
+
+                  {/* Smooth Glow Ring Animation */}
+                  <motion.span
+                    className="absolute inset-0 rounded-full"
+                    animate={{
+                      scale: [1, 1.15, 1],
+                      opacity: [0.2, 0.35, 0.2],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    style={{
+                      background: "radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%)",
+                      zIndex: 0,
+                    }}
+                  />
                 </motion.a>
               </motion.div>
+
+
+
             </motion.div>
           </div>
         </div>

@@ -258,7 +258,7 @@ export default function MarketingSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-20 text-center"
         >
-          <button className="relative px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 rounded-xl text-white font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group overflow-hidden">
+          <button className="relative cursor-pointer px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 rounded-full text-white font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group overflow-hidden">
             <span className="relative z-10">Get Free Demo</span>
             <div className="absolute inset-0 bg-gradient-to-r from-red-700 to-red-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute top-0 left-0 w-full h-full bg-white/10 group-hover:bg-white/0 transition-all duration-500"></div>

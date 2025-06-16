@@ -63,7 +63,7 @@ export default function Faq() {
           </motion.h2>
           <motion.div 
             initial={{ opacity: 0, width: 0 }}
-            whileInView={{ opacity: 1, width: "100%" }}
+            whileInView={{ opacity: 1, width: "30%" }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"
@@ -78,7 +78,7 @@ export default function Faq() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4 }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow"
+              className="bg-white rounded-xl border overflow-hidden  hover:shadow-xl transition-shadow"
             >
               <button
                 onClick={() => toggleFAQ(faq.id)}

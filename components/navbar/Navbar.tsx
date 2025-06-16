@@ -164,7 +164,7 @@ export default function Navbar() {
                 variants={menuVariants}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className='ml-2'
+                className='ml-2 w-full'
               >
                 <Link
                   href="#contact"

@@ -51,28 +51,29 @@ const OtherProducts = () => {
         }
       ],
       benefits: [
-        {
-          value: "30%+",
-          title: "Reduced Waste",
-          description: "Precise inventory tracking minimizes food spoilage",
-          icon: <Percent className="w-5 h-5" />,
-          color: "from-emerald-100 to-emerald-50 border-emerald-200 text-emerald-700"
-        },
-        {
-          value: "25%",
-          title: "Cost Savings",
-          description: "Optimize purchasing and reduce overstocking",
-          icon: <TrendingUp className="w-5 h-5" />,
-          color: "from-blue-100 to-blue-50 border-blue-200 text-blue-700"
-        },
-        {
-          value: "99%",
-          title: "Accuracy",
-          description: "Automated tracking eliminates manual errors",
-          icon: <CheckCircle className="w-5 h-5" />,
-          color: "from-violet-100 to-violet-50 border-violet-200 text-violet-700"
-        }
-      ]
+  {
+    value: "30%+",
+    title: "Reduced Waste",
+    description: "Precise inventory tracking minimizes food spoilage",
+    icon: <Percent className="w-5 h-5" />,
+    color: "from-red-100 to-red-50 border-red-200 text-red-700"
+  },
+  {
+    value: "25%",
+    title: "Cost Savings",
+    description: "Optimize purchasing and reduce overstocking",
+    icon: <TrendingUp className="w-5 h-5" />,
+    color: "from-red-100 to-red-50 border-red-200 text-red-700"
+  },
+  {
+    value: "99%",
+    title: "Accuracy",
+    description: "Automated tracking eliminates manual errors",
+    icon: <CheckCircle className="w-5 h-5" />,
+    color: "from-red-100 to-red-50 border-red-200 text-red-700"
+  }
+]
+
     },
     management: {
       title: "Queue & Staff",
@@ -99,29 +100,30 @@ const OtherProducts = () => {
           ]
         }
       ],
-      benefits: [
-        {
-          value: "50%",
-          title: "Faster Turnover",
-          description: "Reduce table wait times and increase covers",
-          icon: <Activity className="w-5 h-5" />,
-          color: "from-amber-100 to-amber-50 border-amber-200 text-amber-700"
-        },
-        {
-          value: "40%",
-          title: "Staff Efficiency",
-          description: "Optimize staff allocation during peak hours",
-          icon: <Users className="w-5 h-5" />,
-          color: "from-rose-100 to-rose-50 border-rose-200 text-rose-700"
-        },
-        {
-          value: "4.8★",
-          title: "Customer Rating",
-          description: "Improved experience with wait time transparency",
-          icon: <CheckCircle className="w-5 h-5" />,
-          color: "from-indigo-100 to-indigo-50 border-indigo-200 text-indigo-700"
-        }
-      ]
+     benefits: [
+  {
+    value: "50%",
+    title: "Faster Turnover",
+    description: "Reduce table wait times and increase covers",
+    icon: <Activity className="w-5 h-5" />,
+    color: "from-red-100 to-red-50 border-red-200 text-red-700"
+  },
+  {
+    value: "40%",
+    title: "Staff Efficiency",
+    description: "Optimize staff allocation during peak hours",
+    icon: <Users className="w-5 h-5" />,
+    color: "from-red-100 to-red-50 border-red-200 text-red-700"
+  },
+  {
+    value: "4.8★",
+    title: "Customer Rating",
+    description: "Improved experience with wait time transparency",
+    icon: <CheckCircle className="w-5 h-5" />,
+    color: "from-red-100 to-red-50 border-red-200 text-red-700"
+  }
+]
+
     },
     delivery: {
       title: "Delivery System",
@@ -149,28 +151,29 @@ const OtherProducts = () => {
         }
       ],
       benefits: [
-        {
-          value: "35%",
-          title: "Faster Delivery",
-          description: "Optimized routes reduce delivery times",
-          icon: <Clock className="w-5 h-5" />,
-          color: "from-orange-100 to-orange-50 border-orange-200 text-orange-700"
-        },
-        {
-          value: "20%",
-          title: "Cost Reduction",
-          description: "Efficient routing lowers fuel costs",
-          icon: <TrendingUp className="w-5 h-5" />,
-          color: "from-cyan-100 to-cyan-50 border-cyan-200 text-cyan-700"
-        },
-        {
-          value: "95%",
-          title: "On-Time Rate",
-          description: "Accurate ETAs and real-time tracking",
-          icon: <CheckCircle className="w-5 h-5" />,
-          color: "from-lime-100 to-lime-50 border-lime-200 text-lime-700"
-        }
-      ]
+  {
+    value: "35%",
+    title: "Faster Delivery",
+    description: "Optimized routes reduce delivery times",
+    icon: <Clock className="w-5 h-5" />,
+    color: "from-red-100 to-red-50 border-red-200 text-red-700"
+  },
+  {
+    value: "20%",
+    title: "Cost Reduction",
+    description: "Efficient routing lowers fuel costs",
+    icon: <TrendingUp className="w-5 h-5" />,
+    color: "from-red-100 to-red-50 border-red-200 text-red-700"
+  },
+  {
+    value: "95%",
+    title: "On-Time Rate",
+    description: "Accurate ETAs and real-time tracking",
+    icon: <CheckCircle className="w-5 h-5" />,
+    color: "from-red-100 to-red-50 border-red-200 text-red-700"
+  }
+]
+
     },
     reporting: {
       title: "Analytics Suite",
@@ -197,29 +200,30 @@ const OtherProducts = () => {
           ]
         }
       ],
-      benefits: [
-        {
-          value: "27%",
-          title: "Revenue Growth",
-          description: "Data-driven menu and pricing optimization",
-          icon: <BarChart3 className="w-5 h-5" />,
-          color: "from-purple-100 to-purple-50 border-purple-200 text-purple-700"
-        },
-        {
-          value: "60%",
-          title: "Time Savings",
-          description: "Automated reporting replaces manual processes",
-          icon: <Clock className="w-5 h-5" />,
-          color: "from-pink-100 to-pink-50 border-pink-200 text-pink-700"
-        },
-        {
-          value: "360°",
-          title: "Visibility",
-          description: "Complete operational insights in one dashboard",
-          icon: <Activity className="w-5 h-5" />,
-          color: "from-sky-100 to-sky-50 border-sky-200 text-sky-700"
-        }
-      ]
+    benefits: [
+  {
+    value: "27%",
+    title: "Revenue Growth",
+    description: "Data-driven menu and pricing optimization",
+    icon: <BarChart3 className="w-5 h-5" />,
+    color: "from-red-100 to-red-50 border-red-200 text-red-700"
+  },
+  {
+    value: "60%",
+    title: "Time Savings",
+    description: "Automated reporting replaces manual processes",
+    icon: <Clock className="w-5 h-5" />,
+    color: "from-red-100 to-red-50 border-red-200 text-red-700"
+  },
+  {
+    value: "360°",
+    title: "Visibility",
+    description: "Complete operational insights in one dashboard",
+    icon: <Activity className="w-5 h-5" />,
+    color: "from-red-100 to-red-50 border-red-200 text-red-700"
+  }
+]
+
     }
   };
 
@@ -288,17 +292,17 @@ const OtherProducts = () => {
         </motion.div>
 
         {/* Unified container for sidebar and content */}
-        <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+        <div className="bg-white rounded-3xl  overflow-hidden">
           <div className="flex flex-col lg:flex-row">
             {/* Sidebar Navigation */}
             <motion.div 
-              className="w-full lg:w-1/4 bg-gradient-to-b from-blue-50 to-cyan-50"
+              className="w-full lg:w-1/4 bg-gradient-to-b from-red-50 to-red-50"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
               <div className="p-6 h-full">
-                <h3 className="text-xl font-bold text-gray-800 mb-6 pb-3 border-b border-blue-100">Management Modules</h3>
+                <h3 className="text-xl font-bold text-gray-800 mb-6 pb-3 border-b border-red-100">Management Modules</h3>
                 <div className="space-y-3">
                   {Object.entries(features).map(([key, feature], index) => (
                     <motion.button
@@ -306,17 +310,17 @@ const OtherProducts = () => {
                       onClick={() => setActiveTab(key as FeatureKey)}
                       className={`flex items-center gap-4 w-full p-4 rounded-xl transition-all duration-300 ${
                         activeTab === key
-                          ? 'bg-white shadow-md border border-blue-200'
+                          ? 'bg-white shadow-md border border-red-200'
                           : 'hover:bg-white/50'
                       }`}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <div className={`p-3 rounded-lg ${activeTab === key ? 'bg-blue-500 text-white' : 'bg-blue-200 text-blue-700'}`}>
+                      <div className={`p-3 rounded-lg ${activeTab === key ? 'bg-red-500 text-white' : 'bg-red-200 text-red-700'}`}>
                         {feature.icon}
                       </div>
                       <div className="text-left">
-                        <h4 className={`font-medium ${activeTab === key ? 'text-blue-600' : 'text-gray-700'}`}>
+                        <h4 className={`font-medium ${activeTab === key ? 'text-red-600' : 'text-gray-700'}`}>
                           {feature.title}
                         </h4>
                         <p className="text-sm text-gray-500">{feature.subtitle}</p>
@@ -326,10 +330,10 @@ const OtherProducts = () => {
                 </div>
                 
                 {/* Call to action */}
-                <div className="mt-8 p-5 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl text-white">
+                <div className="mt-8 p-5 bg-gradient-to-r from-red-600 to-red-500 rounded-xl text-white">
                   <h3 className="text-lg font-bold mb-2">Ready to transform your restaurant?</h3>
-                  <p className="text-sm text-blue-100 mb-3">Join thousands of successful restaurants using our platform</p>
-                  <button className="w-full flex items-center justify-between px-4 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-gray-100 transition-colors">
+                  <p className="text-sm text-red-100 mb-3">Join thousands of successful restaurants using our platform</p>
+                  <button className="w-full flex items-center justify-between px-4 py-3 bg-white text-red-600 font-medium rounded-lg hover:bg-gray-100 transition-colors">
                     <span>Request Demo</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
@@ -358,8 +362,8 @@ const OtherProducts = () => {
                           transition={{ delay: index * 0.1 + 0.2 }}
                         >
                           <div className="flex items-center gap-3 mb-5 pb-3 border-b border-gray-100">
-                            <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
-                              <div className="w-6 h-6 rounded-md bg-blue-500 flex items-center justify-center">
+                            <div className="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center">
+                              <div className="w-6 h-6 rounded-md bg-red-500 flex items-center justify-center">
                                 <CheckCircle className="w-3 h-3 text-white" />
                               </div>
                             </div>
@@ -372,7 +376,7 @@ const OtherProducts = () => {
                                 className="flex gap-3 group"
                               >
                                 <div className="mt-1 flex-shrink-0">
-                                  <div className="w-2 h-2 rounded-full bg-blue-500 mt-2"></div>
+                                  <div className="w-2 h-2 rounded-full bg-red-500 mt-2"></div>
                                 </div>
                                 <span className="text-gray-700 group-hover:text-gray-900 transition-colors">
                                   {feature}

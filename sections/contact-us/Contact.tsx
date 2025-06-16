@@ -13,12 +13,12 @@ export const ContactUs = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: 'Email Us',
-      desc: 'Reach us anytime at support@example.com',
+      desc: 'Reach us anytime at eatX@gmail.com',
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: 'Call Us',
-      desc: 'Talk directly to our team at (123) 456-7890',
+      desc: 'Talk directly to our team at 03219785415',
     },
     {
       icon: <MapPin className="w-6 h-6" />,
@@ -39,13 +39,13 @@ export const ContactUs = () => {
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.h2
-          className="text-5xl font-extrabold text-red-500 mb-6"
+          className="text-5xl font-extrabold  mb-6"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Contact Our Team
+          Contact Our <span className='text-red-600'>Team</span>
         </motion.h2>
 
         <motion.p
@@ -63,7 +63,7 @@ export const ContactUs = () => {
           {contactInfo.map((item, i) => (
             <motion.div
               key={i}
-              className="bg-white shadow-xl rounded-2xl p-6 border border-gray-100 hover:shadow-2xl transition-all"
+              className="bg-white  rounded-2xl p-6 border  hover:border-red-200 transition-all"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.2 }}
@@ -81,7 +81,7 @@ export const ContactUs = () => {
       </div>
 
         {/* CTA */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
@@ -103,7 +103,7 @@ export const ContactUs = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
     </section>
   );
 };

@@ -2,31 +2,41 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import {
+  PhoneCall,
+  Brain,
+  Car,
+  CheckCircle,
+  Mail,
+  Search,
+  Settings,
+  ShieldCheck,
+} from "lucide-react";
 
 const supportItems = [
   {
     title: "Instant Help",
     description:
       "Our team is ready 24/7 via chat, call, or email to assist you in seconds.",
-    icon: "📞",
+    icon: <PhoneCall className="w-6 h-6" />,
   },
   {
     title: "Expert Problem Solvers",
     description:
       "Certified support specialists identify, analyze, and resolve issues fast.",
-    icon: "🧠",
+    icon: <Brain className="w-6 h-6" />,
   },
   {
     title: "On-Site or Online",
     description:
       "Remote fixes or rapid on-site support — we’re where you need us to be.",
-    icon: "🚗",
+    icon: <Car className="w-6 h-6" />,
   },
   {
     title: "Satisfaction Guaranteed",
     description:
       "Before we close any ticket, we ensure everything is working perfectly.",
-    icon: "✅",
+    icon: <CheckCircle className="w-6 h-6" />,
   },
 ];
 
@@ -34,109 +44,102 @@ const timelineSteps = [
   {
     title: "Reach Out",
     description: "Contact us through chat, call, or email — anytime, anywhere.",
-    icon: "📩",
+    icon: <Mail className="w-5 h-5" />,
   },
   {
     title: "Diagnosis",
     description: "We quickly assess and understand your issue for the fastest fix.",
-    icon: "🔍",
+    icon: <Search className="w-5 h-5" />,
   },
   {
     title: "Immediate Action",
     description: "Our team takes instant steps — remotely or by dispatching experts.",
-    icon: "⚙️",
+    icon: <Settings className="w-5 h-5" />,
   },
   {
     title: "Final Resolution",
     description: "We confirm full resolution and your satisfaction before closing.",
-    icon: "✅",
+    icon: <ShieldCheck className="w-5 h-5" />,
   },
 ];
 
 const SupportSection = () => {
   return (
-    <section className="relative bg-white py-28 overflow-hidden">
+    <section className="relative bg-white py-32 overflow-hidden">
       <motion.div
-        className="absolute -top-32 left-1/2 transform -translate-x-1/2 w-[140%] h-[140%] bg-red-100 opacity-30 rounded-full blur-3xl z-0"
+        className="absolute -top-40 left-1/2 transform -translate-x-1/2 w-[160%] h-[160%]  opacity-10 rounded-full blur-3xl z-0"
         initial={{ scale: 0 }}
         animate={{ scale: 2 }}
         transition={{ duration: 1.5 }}
       />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-24"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl font-extrabold text-red-500">
-            Real Support, Real People
+          <h2 className="text-5xl font-extrabold text-center">
+            Premium <span className="text-red-600">Support</span> For Your Business
           </h2>
-          <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
-            No bots. No wait. Just expert help when you need it most.
+          <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto text-center">
+            We deliver real-time, human-powered help — from quick fixes to mission-critical support.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-4 gap-6">
           {supportItems.map((item, index) => (
             <motion.div
               key={index}
-              className="bg-white shadow-xl border border-gray-100 p-8 rounded-2xl relative overflow-hidden hover:shadow-2xl transition-all"
+              className="bg-white border  p-6 rounded-2xl  hover:shadow-2xl transition-all text-center"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <div className="flex items-start gap-4">
-                <div className="text-3xl bg-red-100 text-red-500 rounded-full w-12 h-12 flex items-center justify-center">
-                  {item.icon}
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-gray-800 mb-1">
-                    {item.title}
-                  </h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
+              <div className="mx-auto mb-4 text-red-600 bg-red-100 p-3 rounded-full w-fit">
+                {item.icon}
               </div>
+              <h4 className="text-xl font-semibold text-gray-800 mb-2">
+                {item.title}
+              </h4>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {item.description}
+              </p>
             </motion.div>
           ))}
         </div>
 
-        {/* Timeline */}
         <motion.div
-          className="mt-28 relative"
+          className="mt-16 sm:mt-32 relative px-4 py-8 sm:p-10 rounded-3xl "
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-4xl font-bold text-center text-red-500 mb-12">
-            How It Works
+          <h3 className="text-4xl font-bold text-center text-black mb-5 sm:mb-16">
+            Our Support <span className="italic text-red-600 font-extrabold">Process</span>
           </h3>
 
           <div className="relative max-w-4xl mx-auto">
-            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full border-l-4 border-red-200 z-0"></div>
+            <div className="hidden rounded-full md:block absolute left-1/2 transform -translate-x-1/2 h-full border-l-3 border-red-200 z-0"></div>
 
             {timelineSteps.map((step, index) => {
               const isLeft = index % 2 === 0;
               return (
                 <motion.div
                   key={index}
-                  className={`relative mb-1 flex w-full items-center ${
-                    isLeft ? "md:justify-start" : "md:justify-end"
-                  }`}
+                  className={`relative flex w-full  items-center ${isLeft ? "md:justify-start" : "md:justify-end"}`}
                   initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                 >
-                  <div className="w-full md:w-1/2 px-2 z-10">
-                    <div className="bg-white border border-gray-200 shadow-md rounded-xl p-5 relative">
-                      <div className="flex items-center gap-4 mb-2">
-                        <div className="w-10 h-10 rounded-full bg-red-100 text-red-500 text-xl flex items-center justify-center">
+                  <div className="w-full mb-2 md:w-1/2 sm:px-6 z-10">
+                    <div className="bg-white border border-gray-200 rounded-xl p-6 relative">
+                      <div className="flex items-center gap-4 mb-3">
+                        <div className="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center">
                           {step.icon}
                         </div>
-                        <h4 className="text-lg font-bold text-gray-800">
+                        <h4 className="text-lg font-semibold text-gray-800">
                           {step.title}
                         </h4>
                       </div>
@@ -145,11 +148,9 @@ const SupportSection = () => {
                       </p>
 
                       <div
-                        className={`hidden md:block absolute top-1/2 transform -translate-y-1/2 ${
-                          isLeft ? "right-[-14px]" : "left-[-14px]"
-                        }`}
+                        className={`hidden md:block absolute top-1/2 transform -translate-y-1/2 ${isLeft ? "right-[-14px]" : "left-[-14px]"}`}
                       >
-                        <div className="w-5 h-5 rounded-full bg-red-500 border-[3px] border-white shadow-md"></div>
+                        <div className="w-5 h-5 rounded-full bg-red-600 border-[2px] border-white shadow-md"></div>
                       </div>
                     </div>
                   </div>
@@ -160,22 +161,22 @@ const SupportSection = () => {
         </motion.div>
 
         <motion.div
-          className="bg-red-50 mt-28 rounded-2xl p-10 text-center"
+          className="bg-red-50 mt-10  sm:mt-32 rounded-2xl p-12 text-center "
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-3xl font-bold mb-3 text-gray-900">
-            Need Help Right Now?
+          <h3 className="text-3xl font-bold mb-4 text-gray-900">
+            Need Immediate Help?
           </h3>
           <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-            Don’t let tech trouble slow you down — let our team jump in and fix it.
+            Let our expert team take the pressure off — we’re just a click away.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-xl font-semibold transition-all">
+            <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold transition-all">
               Talk to Support
             </button>
-            <button className="border border-red-500 text-red-500 hover:text-white hover:bg-red-500 px-6 py-3 rounded-xl font-semibold transition-all">
+            <button className="border border-red-600 text-red-600 hover:text-white hover:bg-red-600 px-6 py-3 rounded-full font-semibold transition-all">
               Request On-site Visit
             </button>
           </div>
