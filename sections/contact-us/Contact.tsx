@@ -13,17 +13,17 @@ export const ContactUs = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: 'Email Us',
-      desc: 'Reach us anytime at eatX@gmail.com',
+      desc: 'Reach us anytime at info@ygensys.com',
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: 'Call Us',
-      desc: 'Talk directly to our team at 03219785415',
+      desc: 'Talk directly to our team at 03452345864',
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: 'Visit Us',
-      desc: '123 Main St, Suite 100, Tech City, PK',
+      desc: 'Office #503,3rd Floor, Gulistan Chamber, Bangalore Town Block A Shabbirabad, Karachi,Sindh 75350',
     },
   ];
 
