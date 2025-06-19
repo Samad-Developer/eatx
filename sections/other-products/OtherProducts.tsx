@@ -267,7 +267,7 @@ const OtherProducts = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+    <section className="py-20 ">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Header */}
         <motion.div
@@ -280,7 +280,7 @@ const OtherProducts = () => {
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
             variants={headerVariants}
           >
-            <span className="block">Complete Restaurant Management Suite</span>
+            <span className="block">Complete <span className='text-red-600'>Restaurant </span>Management Suite</span>
           </motion.h2>
 
           <motion.p
@@ -292,7 +292,7 @@ const OtherProducts = () => {
         </motion.div>
 
         {/* Unified container for sidebar and content */}
-        <div className="bg-white rounded-3xl  overflow-hidden">
+        <div className="bg-white rounded-3xl border overflow-hidden">
           <div className="flex flex-col lg:flex-row">
             {/* Sidebar Navigation */}
             <motion.div 

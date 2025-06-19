@@ -28,7 +28,7 @@ export const ContactUs = () => {
   ];
 
   return (
-    <section className="relative py-28 px-6 sm:px-10 bg-white overflow-hidden">
+    <section className="relative py-5 px-6 sm:px-10 bg-white overflow-hidden">
       {/* Background Animation */}
       <motion.div
         className="absolute top-0 left-0 w-full h-full opacity-20 blur-3xl rounded-full -z-10"
@@ -39,7 +39,7 @@ export const ContactUs = () => {
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.h2
-          className="text-5xl font-extrabold  mb-6"
+          className="text-4xl md:text-5xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-6"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

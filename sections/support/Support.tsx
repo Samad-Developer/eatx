@@ -1,7 +1,12 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  MotionValue,
+} from "framer-motion";
 import {
   PhoneCall,
   Brain,
@@ -63,11 +68,80 @@ const timelineSteps = [
   },
 ];
 
+type TimelineStepProps = {
+  step: {
+    title: string;
+    description: string;
+    icon: React.ReactNode;
+  };
+  index: number;
+  isLeft: boolean;
+  scrollYProgress: MotionValue<number>;
+};
+
+const directions = [
+  { x: -200, y: -100 }, // top-left
+  { x: 200, y: -100 },  // top-right
+  { x: -150, y: 150 },  // bottom-left
+  { x: 150, y: 150 },   // bottom-right
+];
+
+const TimelineStep = ({
+  step,
+  index,
+  isLeft,
+  scrollYProgress,
+}: TimelineStepProps) => {
+  const from = directions[index % directions.length];
+
+  // Come from random TO final place (0)
+  const x = useTransform(scrollYProgress, [0.3, 0.7], [from.x, 0]);
+  const y = useTransform(scrollYProgress, [0.3, 0.7], [from.y, 0]);
+  const opacity = useTransform(scrollYProgress, [0.2, 0.5], [0, 1]);
+
+  return (
+    <motion.div
+      style={{ x, y, opacity }}
+      className={`relative flex w-full items-center ${
+        isLeft ? "md:justify-start" : "md:justify-end"
+      }`}
+    >
+      <div className="w-full mb-2 md:w-1/2 sm:px-6 z-10">
+        <div className="bg-white border border-gray-200 rounded-xl p-6 relative">
+          <div className="flex items-center gap-4 mb-3">
+            <div className="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center">
+              {step.icon}
+            </div>
+            <h4 className="text-lg font-semibold text-gray-800">{step.title}</h4>
+          </div>
+          <p className="text-gray-600 text-sm leading-relaxed">
+            {step.description}
+          </p>
+          <div
+            className={`hidden md:block absolute top-1/2 transform -translate-y-1/2 ${
+              isLeft ? "right-[-14px]" : "left-[-14px]"
+            }`}
+          >
+            <div className="w-5 h-5 rounded-full bg-red-600 border-[2px] border-white shadow-md"></div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+
 const SupportSection = () => {
+  const timelineRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start start", "end end"],
+  });
+
   return (
     <section className="relative bg-white py-32 overflow-hidden">
       <motion.div
-        className="absolute -top-40 left-1/2 transform -translate-x-1/2 w-[160%] h-[160%]  opacity-10 rounded-full blur-3xl z-0"
+        className="absolute -top-40 left-1/2 transform -translate-x-1/2 w-[160%] h-[160%] opacity-10 rounded-full blur-3xl z-0"
         initial={{ scale: 0 }}
         animate={{ scale: 2 }}
         transition={{ duration: 1.5 }}
@@ -92,7 +166,7 @@ const SupportSection = () => {
           {supportItems.map((item, index) => (
             <motion.div
               key={index}
-              className="bg-white border  p-6 rounded-2xl  hover:shadow-2xl transition-all text-center"
+              className="bg-white border p-6 rounded-2xl hover:shadow-2xl transition-all text-center"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -100,18 +174,14 @@ const SupportSection = () => {
               <div className="mx-auto mb-4 text-red-600 bg-red-100 p-3 rounded-full w-fit">
                 {item.icon}
               </div>
-              <h4 className="text-xl font-semibold text-gray-800 mb-2">
-                {item.title}
-              </h4>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {item.description}
-              </p>
+              <h4 className="text-xl font-semibold text-gray-800 mb-2">{item.title}</h4>
+              <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
             </motion.div>
           ))}
         </div>
 
         <motion.div
-          className="mt-16 sm:mt-32 relative px-4 py-8 sm:p-10 rounded-3xl "
+          className="mt-16 sm:mt-32 relative px-4 py-8 sm:p-10 rounded-3xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -120,48 +190,26 @@ const SupportSection = () => {
             Our Support <span className="italic text-red-600 font-extrabold">Process</span>
           </h3>
 
-          <div className="relative max-w-4xl mx-auto">
-            <div className="hidden rounded-full md:block absolute left-1/2 transform -translate-x-1/2 h-full border-l-3 border-red-200 z-0"></div>
+          <motion.div ref={timelineRef} className="relative max-w-4xl mx-auto">
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full border-l-3 border-red-200 z-0"></div>
 
             {timelineSteps.map((step, index) => {
               const isLeft = index % 2 === 0;
               return (
-                <motion.div
+                <TimelineStep
                   key={index}
-                  className={`relative flex w-full  items-center ${isLeft ? "md:justify-start" : "md:justify-end"}`}
-                  initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                >
-                  <div className="w-full mb-2 md:w-1/2 sm:px-6 z-10">
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 relative">
-                      <div className="flex items-center gap-4 mb-3">
-                        <div className="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center">
-                          {step.icon}
-                        </div>
-                        <h4 className="text-lg font-semibold text-gray-800">
-                          {step.title}
-                        </h4>
-                      </div>
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        {step.description}
-                      </p>
-
-                      <div
-                        className={`hidden md:block absolute top-1/2 transform -translate-y-1/2 ${isLeft ? "right-[-14px]" : "left-[-14px]"}`}
-                      >
-                        <div className="w-5 h-5 rounded-full bg-red-600 border-[2px] border-white shadow-md"></div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
+                  step={step}
+                  index={index}
+                  isLeft={isLeft}
+                  scrollYProgress={scrollYProgress}
+                />
               );
             })}
-          </div>
+          </motion.div>
         </motion.div>
 
         <motion.div
-          className="bg-red-50 mt-10  sm:mt-32 rounded-2xl p-12 text-center "
+          className="bg-red-50 mt-10 sm:mt-32 rounded-2xl p-12 text-center"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

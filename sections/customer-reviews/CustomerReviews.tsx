@@ -153,18 +153,7 @@ const CustomerReviews = () => {
 
     
 
-        {/* CTA */}
-        <div className="text-center">
-          <h3 className="text-3xl font-bold text-gray-900 mb-6">Ready to transform your restaurant?</h3>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 text-white cursor-pointer font-medium rounded-full hover:shadow-lg transition-all duration-300">
-              Request a Demo
-            </button>
-            <button className="px-8 py-4 bg-white text-red-600 border-2 border-red-600 font-medium rounded-full cursor-pointer hover:bg-red-50 transition-colors">
-              View More Reviews
-            </button>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
