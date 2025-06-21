@@ -60,7 +60,7 @@ export default function Hero() {
         </div>
 
         {/* Main hero content */}
-        <div className="mx-auto max-w-5xl pt-36 sm:pt-40 px-4">
+        <div className="mx-auto max-w-5xl pt-36 sm:pt-56 px-4">
           <div className="text-center">
             <motion.div
               className="text-center"
@@ -73,7 +73,7 @@ export default function Hero() {
                 variants={item}
               >
                 <span className="block">
-                  All-in-One Restaurant Management Platform{" "}
+                  All-in-One Restaurant Management Platform {" "}
                   <motion.span
                     className="bg-gradient-to-r from-red-400 to-red-700 bg-clip-text text-transparent"
                     variants={gradientPulse}

@@ -79,27 +79,17 @@ export function KeyFeatures() {
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
+        <div
           className="text-center mb-16"
         >
-          <motion.div 
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2 }}
+          <div
             className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 bg-red-100 rounded-full"
           >
             <Zap className="w-5 h-5 text-red-600" />
             <span className="font-medium text-red-600 ">Streamline Your Operations</span>
-          </motion.div>
+          </div>
           
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
+          <div
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
           >
             Our <span className="text-red-600">Services</span> 
@@ -120,23 +110,17 @@ export function KeyFeatures() {
                 </defs>
               </svg>
             </span> */}
-          </motion.h2>
+          </div>
           
-          <motion.p 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
+          <p
             className="max-w-2xl mx-auto text-xl text-gray-600"
           >
             Everything you need to streamline operations, delight customers, and grow your restaurant business.
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
         {/* Tabs */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
+        <div
           className="flex justify-center mb-12"
         >
           <div className="inline-flex p-1 rounded-full bg-slate-100 border">
@@ -154,7 +138,7 @@ export function KeyFeatures() {
               Online Ordering
             </button>
           </div>
-        </motion.div>
+        </div>
 
         {/* Features Grid */}
         <motion.div

@@ -53,31 +53,33 @@ export const Clients = () => {
   return (
     <section className="relative pt-24 pb-24 px-2 sm:px-10 overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto">
-    <div className="text-center mb-16 px-4">
-  <motion.h1
-    className="text-4xl md:text-5xl lg:text-6xl font-extrabold sm:font-bold text-gray-900 leading-tight mb-4 flex justify-center items-center gap-2"
-    initial={{ opacity: 0, y: -30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.7 }}
-  >
-<span className="bg-gradient-to-r from-red-400 to-red-600 text-transparent bg-clip-text ">
-  <span className="text-black">Trusted by</span> ❤️‍🔥 Top Restaurants
-</span>
-   
-    
-  </motion.h1>
+        <div className="text-center mb-16 px-4">
+          <motion.h1
+            className="text-4xl md:text-5xl  font-extrabold sm:font-bold text-gray-900 leading-tight mb-4 flex justify-center items-center gap-2"
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <span className=" text-transparent bg-clip-text ">
+              <span className="text-black">Our Amazing</span>   <span className="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-red-500">
+                <span className="relative text-white dark:text-gray-950">Clients</span>
+              </span>
+            </span>
 
-  <motion.p
-    className="text-lg text-gray-600 max-w-2xl mx-auto"
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay: 0.2, duration: 0.7 }}
-  >
-    Helping restaurants grow with <span className="text-red-500 font-semibold">blazing-fast POS</span>, smooth <span className="text-red-500 font-semibold">online orders</span>, and real-time insights that actually matter.
-  </motion.p>
-</div>
+
+          </motion.h1>
+
+          <motion.p
+            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.7 }}
+          >
+            Helping restaurants grow with <span className="text-red-500 font-semibold">blazing-fast POS</span>, smooth <span className="text-red-500 font-semibold">online orders</span>, and real-time insights that actually matter.
+          </motion.p>
+        </div>
 
 
         <motion.div
@@ -91,20 +93,20 @@ export const Clients = () => {
             <motion.div
               key={client.id}
               variants={item}
-              className="relative group rounded-4xl border p-2 flex flex-col items-center justify-center h-48"
+              className="relative group rounded-4xl border p-2 flex flex-col items-center justify-center h-48 hover:border-2 hover:border-red-300"
               whileHover={{ scale: 1.04 }}
             >
-              <div className=" h-36 flex items-center justify-center">
+              <div className=" h-36 flex items-center justify-center ">
                 <OptimizedImage
                   folder="clients"
                   src={client.logo}
                   alt={`${client.name} logo`}
                   width={client.width}
                   height={client.height}
-                  className="object-cover rounded-full max-h-[144px] transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover rounded-full max-h-[144px]  transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <p className="text-sm text-black mt-2 text-center">{client.name}</p>
+              <p className="text-sm text-black mt-2 text-center group-hover:text-red-500 group-hover:font-bold">{client.name}</p>
             </motion.div>
           ))}
         </motion.div>

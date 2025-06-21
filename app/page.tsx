@@ -29,10 +29,10 @@ const Home = () => {
       <ProblemSolution />
 
       {/* 5. Explain How You Market/Deliver (Trust & Reach) */}
-      <MarketingSection />
+      {/* <MarketingSection /> */}
 
       {/* 6. Show Active Support + Workflow Confidence */}
-      <Support />
+      {/* <Support /> */}
 
       {/* 7. Highlight the Human Behind the Product */}
       <OurTeam />
@@ -41,7 +41,7 @@ const Home = () => {
       {/* <Content /> */}
 
       {/* 9. Cross-sell Other Relevant Products/Modules */}
-      <OtherProducts />
+      {/* <OtherProducts /> */}
 
       {/* 10. Overcome Objections with FAQs */}
       <Faq />
@@ -50,7 +50,7 @@ const Home = () => {
       <CustomerReviews />
 
       {/* 12. Clear Final CTA */}
-      <ContactUs />
+      {/* <ContactUs /> */}
 
       {/* Footer */}
       <Footer/>
