@@ -221,10 +221,10 @@ const SupportSection = () => {
             Let our expert team take the pressure off — we’re just a click away.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold transition-all">
+            <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-full font-semibold transition-all">
               Talk to Support
             </button>
-            <button className="border border-red-600 text-red-600 hover:text-white hover:bg-red-600 px-6 py-3 rounded-full font-semibold transition-all">
+            <button className="border border-red-600 text-red-600 hover:cursor-pointer px-6 py-2.5 rounded-full font-semibold transition-all">
               Request On-site Visit
             </button>
           </div>
